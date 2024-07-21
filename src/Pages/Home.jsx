@@ -26,6 +26,7 @@ function Home(){
         catch(e){
             console.log(e.message);
         }
+        setLoading(false);
     }
 
     async function fetchitems(){
@@ -40,7 +41,6 @@ function Home(){
             console.log("Error agya ji");
             setItems([]);
         }
-        setLoading(false);
     }
 
     useEffect(()=>{

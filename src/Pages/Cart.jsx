@@ -21,13 +21,13 @@ function Cart(){
         <div>
             <div className="w-[100vw] h-full mt-[12vh] overflow-x-hidden">
             {
-                cartData.length>0?
+                cartData?.length>0?
                 (
                 <div className="max-w-[1100px]  mt-7 mx-auto flex flex-col md:flex-row gap-x-20 p-5 pb-[150px] md:pb-0">
                     
                     <div className="w-full md:w-[60%]">
                         {
-                            cartData.map((item)=>(
+                            cartData?.map((item)=>(
                                 <Card key={item.id} item={item}/>
                             ))
                         }
@@ -36,7 +36,7 @@ function Cart(){
                         <div>
                         <h2 className="font-bold text-green-800 text-lg">YOUR CART</h2>
                         <h1 className="sm:text-4xl text-2xl text-green-800 font-bold tracking-wide">SUMMARY</h1>
-                        <p className="mt-3 text-gray-800 font-bold">Total Items : {cartData.length}</p>
+                        <p className="mt-3 text-gray-800 font-bold">Total Items : {cartData?.length}</p>
                         </div>
 
                         <div>
