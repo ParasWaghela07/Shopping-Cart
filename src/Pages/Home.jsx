@@ -35,7 +35,7 @@ function Home(){
         try{
             const respose=await fetch('https://fakestoreapi.com/products');
             const res=await respose.json();
-            console.log("ITEMS IN HOME :- " , res);
+            // console.log("ITEMS IN HOME :- " , res);
             setItems(res);
         }
         catch(e){
