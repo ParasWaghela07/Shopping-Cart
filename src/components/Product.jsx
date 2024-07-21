@@ -72,16 +72,18 @@ function Product({item,fetchcartitems}){
                 let newArray=[...cartData];
                 newArray.push(item);
                 setcartData(newArray);
+                toast.success("Item added to cart")
             }
-            setloader(false);
-            toast.success("Item added to cart")
         }
         catch(e){
             console.log(e.message);
         }
 
-        console.log("Product k andr single item :- ",item)
+        setloader(false);
+        
     }
+
+    console.log("Product k andr single item :- ",item)
 
     return(
         <div className="flex flex-col items-center justify-between transition duration-300 ease-in gap-3 px-3 py-4 mt-10 rounded-xl border border-slate-300 hover:shadow-2xl hover:border-slate-900 relative">

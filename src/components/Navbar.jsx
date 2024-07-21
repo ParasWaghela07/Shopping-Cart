@@ -57,7 +57,7 @@ function Navbar(){
                     <MdOutlineShoppingCart className="text-white text-3xl relative"/>
                     {
                        cartData?.length>0 &&
-                       <div className="text-white bg-orange-400 rounded-full w-[18px] h-[18px] flex justify-center items-center text-[12px] absolute -right-1 top-3 2xl:top-5 animate-bounce">{cartData.length}</div>
+                       <div className="text-white bg-orange-400 rounded-full w-[18px] h-[18px] flex justify-center items-center text-[12px] absolute -right-1 top-3 2xl:top-5 animate-bounce">{cartData?.length}</div>
                     }
                     </NavLink>
                  }

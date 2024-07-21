@@ -10,12 +10,12 @@ function Cart(){
 
     useEffect(()=>{
         let sum=0;
-        for(let i=0;i<cartData.length;i++){
+        for(let i=0;i<cartData?.length;i++){
             sum+=cartData[i].price;
         }
 
         setamount(sum.toFixed(2));
-    },cartData)
+    },[cartData])
     
     return(
         <div>
