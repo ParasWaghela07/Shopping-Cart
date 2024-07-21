@@ -19,13 +19,12 @@ function Cart(){
     
     return(
         <div>
-            <Navbar/>
             <div className="w-[100vw] h-full mt-[12vh] overflow-x-hidden">
             {
                 cartData.length>0?
                 (
-
                 <div className="max-w-[1100px]  mt-7 mx-auto flex flex-col md:flex-row gap-x-20 p-5 pb-[150px] md:pb-0">
+                    
                     <div className="w-full md:w-[60%]">
                         {
                             cartData.map((item)=>(
@@ -50,6 +49,7 @@ function Cart(){
                 ):
                 (
                     <div className="w-full h-[80vh] flex justify-center items-center flex-col gap-y-2">
+                       
                         <p className="font-bold text-2xl">No items found</p>
                         <NavLink to="/Home">
                         <button className="bg-green-500 px-4 py-2 rounded-md text-white font-bold text-lg">Shop Now</button>

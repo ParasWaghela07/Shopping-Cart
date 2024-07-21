@@ -50,13 +50,14 @@ function Home(){
 
     return(
         <div className="w-[100vw] h-[100vh] overflow-x-hidden">
-            <Navbar/>
+
             <div className="flex justify-center items-center mt-[10vh]">
             {
                 loading?<Spinner/>:
                     items?.length>0 ?
                 (
                     <div className="grid xs:gridcols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-5 mb-10 space-y-10 gap-x-5 min-h-[80vh]">
+                        <Navbar/>
                         {
                             items.map((item)=>(
                                     <Product key={item.id} item={item} fetchcartitems={fetchcartitems}/>
@@ -64,7 +65,7 @@ function Home(){
                         }
                     </div>
                 ):
-                    <p>NO DATA FOUND</p>
+                <p>NO DATA FOUND</p>
             }
         </div>
         </div>

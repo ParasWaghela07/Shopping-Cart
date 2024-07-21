@@ -38,7 +38,7 @@ function Navbar(){
     }
 
     return(
-        <div className="w-[100vw] h-[10vh] bg-[#0f172a] px-4 fixed top-0 z-40">
+        <div className="w-[100vw] h-[10vh] bg-[#0f172a] px-4 fixed left-0 top-0 z-40">
             <div className="max-w-[1200px]  mx-auto h-full flex justify-between items-center relative">
                 
                 <NavLink to="/Home">
