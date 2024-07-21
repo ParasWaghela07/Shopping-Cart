@@ -79,6 +79,8 @@ function Product({item,fetchcartitems}){
         catch(e){
             console.log(e.message);
         }
+
+        console.log("Product k andr single item :- ",item)
     }
 
     return(
@@ -91,7 +93,7 @@ function Product({item,fetchcartitems}){
             <div className="flex justify-between gap-12 items-center w-full mt-5">
                 <p className="text-green-600 font-semibold">${item.price}</p>
                     {
-                        cartData.some((i) => i.id == item.id) ? (
+                        cartData?.some((i) => i.id == item.id) ? (
                             <button onClick={removeHandler} className="bg-white text-gray-700 border-2 border-slate-700 px-2 py-1 rounded-2xl hover:bg-gray-700 hover:text-white font-semibold transition-all duration-200">
                                 REMOVE
                             </button>

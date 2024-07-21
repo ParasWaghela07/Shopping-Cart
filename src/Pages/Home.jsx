@@ -21,6 +21,7 @@ function Home(){
                 credentials: 'include'
             });
             const res=await response.json();
+            console.log("IN HOME fetchcartitems- " , res);
             setcartData(res.data);
         }
         catch(e){
@@ -34,7 +35,7 @@ function Home(){
         try{
             const respose=await fetch('https://fakestoreapi.com/products');
             const res=await respose.json();
-            // console.log(res);
+            console.log("ITEMS IN HOME :- " , res);
             setItems(res);
         }
         catch(e){
