@@ -50,7 +50,7 @@ function Login(){
     
             const data = await response.json(); // Parse the JSON response
     
-            console.log(data);
+            // console.log(data);
     
             if (data.success) {
                 toast.success("You’ve Logged In Successfully!")

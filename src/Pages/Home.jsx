@@ -24,7 +24,7 @@ function Home(){
                 credentials: 'include'
             });
             const res=await response.json();
-            console.log("IN HOME fetchcartitems- " , res);
+            // console.log("IN HOME fetchcartitems- " , res);
             if(!res.success) {
                 navigate('/')
             }
@@ -45,7 +45,7 @@ function Home(){
             setItems(res);
         }
         catch(e){
-            console.log("Error agya ji");
+            console.log(e);
             setItems([]);
         }
         setLoading(false);

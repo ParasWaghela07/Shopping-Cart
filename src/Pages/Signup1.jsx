@@ -43,7 +43,7 @@ function Signup1(){
     
                 const data = await response.json(); // Parse the JSON response
     
-                console.log(data);
+                // console.log(data);
     
                 if (data.success) {
                     setotp(data.otp); // Update state with OTP
@@ -52,7 +52,6 @@ function Signup1(){
                     toast.error(data.message); // Show error message
                 }
             } else {
-                console.log('haha');
                 toast.error("All fields are required");
             }
         } catch (e) {

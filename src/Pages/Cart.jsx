@@ -24,7 +24,7 @@ function Cart() {
                 credentials: 'include'
             });
             const res = await response.json();
-            console.log("IN HOME fetchcartitems- ", res);
+            // console.log("IN HOME fetchcartitems- ", res);
             
             if (res.message === "User Not Found") {
                 navigate('/');

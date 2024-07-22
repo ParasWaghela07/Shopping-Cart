@@ -25,7 +25,7 @@ function Product({item,fetchcartitems}){
             })
 
             const res=await response.json();
-            console.log(res);
+            // console.log(res);
             if(res.success){
                 // fetchcartitems();
                 let newArray=[];
@@ -66,7 +66,7 @@ function Product({item,fetchcartitems}){
             })
 
             const res=await response.json();
-            console.log(res);
+            // console.log(res);
             if(res.success){
                 // fetchcartitems();
                 let newArray=[...cartData];

@@ -1,10 +1,15 @@
 
 exports.logout=async function(req,res){
     try{
-        return res.clearCookie('token').json({
-            success:true,
-            message:"User Logged Out Successfully"
-        })
+        return res.clearCookie('token', {
+            path: '/',
+            secure: true, // Set this to true if your site is HTTPS
+            sameSite: 'None' // Adjust according to your needs
+        }).json({
+            success: true,
+            message: "User Logged Out Successfully"
+        });
+        
     }
     catch(e){
         return res.json({
