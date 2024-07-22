@@ -1,4 +1,5 @@
 const jwt=require('jsonwebtoken');
+const userSchema=require('../models/User')
 require('dotenv').config();
 
 exports.auth=async(req,res,next)=>{
@@ -17,6 +18,15 @@ exports.auth=async(req,res,next)=>{
             const payload=jwt.verify(token,process.env.JWT_SECRET);
             // console.log(payload);
             req.payload=payload;
+
+            const userExist=await userSchema.findbyId(payload.id);
+
+            if(!userExist){
+                return res.status(404).json({
+                    success:false,
+                    message:"User Not Found"
+                })
+            }
         }
         catch(e){
             return res.status(401).json({
