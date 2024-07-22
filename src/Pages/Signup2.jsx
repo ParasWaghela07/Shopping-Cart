@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import {toast} from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -6,10 +6,17 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 
 function Signup2(){
     const [userOtp,setuserotp]=useState('');
+    const {name,email}=useContext(AppContext);
 
     const {otp}=useContext(AppContext);
 
     const navigate=useNavigate();
+
+    function checkInvalid(){
+        if(!name || !email){
+            navigate('/');
+        }
+    }
 
     function verifyOtp(){
         if(!otp){
@@ -30,6 +37,10 @@ function Signup2(){
     function back(){
         navigate('/signup1')
     }
+
+    useEffect(()=>{
+        checkInvalid();
+    },[])
 
     return(
         <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-x-hidden overflow-y-hidden">

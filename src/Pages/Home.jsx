@@ -25,7 +25,7 @@ function Home(){
             });
             const res=await response.json();
             console.log("IN HOME fetchcartitems- " , res);
-            if(res.message=="User Not Found") {
+            if(!res.success) {
                 navigate('/')
             }
             setcartData(res.data);

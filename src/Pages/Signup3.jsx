@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import axios from 'axios';
@@ -8,6 +8,8 @@ import { IoEyeOffOutline } from "react-icons/io5";
 import Loader from '../components/Loader';
 
 function Signup3(){
+
+    const {otp}=useContext(AppContext);
 
     const {name,email}=useContext(AppContext);
 
@@ -21,12 +23,22 @@ function Signup3(){
 
     const navigate=useNavigate();
 
+    function checkInvalid(){
+        if(!otp){
+            navigate('/');
+        }
+    }
+
     function passhandler(e){
         setpass(e.target.value);
     }
     function cpasshandler(e){
         setcpass(e.target.value);
     }
+
+    useEffect(()=>{
+        checkInvalid();
+    },[])
 
     async function creatAccount(){
         if(!pass || !cpass){
