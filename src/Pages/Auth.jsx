@@ -6,7 +6,7 @@ function Auth(){
 
   const navigate=useNavigate();
     return (
-      <div className="flex flex-col justify-center items-center gap-y-10 h-[100vh] w-[100vw] bg-gray-900 text-white">
+      <div className="flex flex-col justify-center items-center gap-y-10 h-[100vh] w-[100vw] bg-gray-900 text-white overflow-hidden">
 
         <p className="text-2xl font-light">Already have an account ? <span  onClick={()=>{navigate('/login')}} className="font-semibold hover:underline text-gray-500 cursor-pointer underline-offset-4">Login</span></p>
 

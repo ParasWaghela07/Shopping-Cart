@@ -65,7 +65,7 @@ function Signup3(){
     }
 
     return(
-        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950">
+        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-hidden">
         <div className="flex items-center justify-center lg:justify-between max-w-[1200px] w-[80%]">
     
             <div className="flex justify-center flex-col gap-y-7 p-2">
