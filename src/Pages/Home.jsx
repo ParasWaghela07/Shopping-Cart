@@ -4,11 +4,13 @@ import Spinner from "../components/Spinner";
 import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 function Home(){
     const [items,setItems]=useState([]);
     const [loading,setLoading]=useState(false);
     const{cartData,setcartData}=useContext(AppContext);
+    const navigate=useNavigate();
 
     async function fetchcartitems(){
         setLoading(true);
@@ -24,7 +26,7 @@ function Home(){
             const res=await response.json();
             console.log("IN HOME fetchcartitems- " , res);
             if(res.message=="User Not Found") {
-                Navigate('/')
+                navigate('/')
             }
             setcartData(res.data);
         }

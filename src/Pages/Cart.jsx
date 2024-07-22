@@ -71,11 +71,13 @@ import Card from "../components/Card";
 import { NavLink } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Spinner from "../components/Spinner";
+import { useNavigate } from "react-router-dom";
 
 function Cart(){
     const{cartData,setcartData}=useContext(AppContext);
     const[amount,setamount]=useState(0);
     const [loading,setLoading]=useState(false);
+    const navigate=useNavigate();
 
     async function fetchcartitems(){
         setLoading(true);
@@ -91,7 +93,7 @@ function Cart(){
             const res=await response.json();
             console.log("IN HOME fetchcartitems- " , res);
             if(res.message=="User Not Found") {
-                Navigate('/')
+                navigate('/')
             }
             setcartData(res.data);
 
@@ -121,7 +123,7 @@ function Cart(){
             <div className="w-[100vw] h-full mt-[12vh] overflow-x-hidden">
             {
                 loading?<Spinner/>:
-                items?.length>0 ?
+                cartData?.length>0 ?
                 (
                 <div className="max-w-[1100px]  mt-7 mx-auto flex flex-col md:flex-row gap-x-20 p-5 pb-[150px] md:pb-0">
                     
