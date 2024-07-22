@@ -5,10 +5,13 @@ import axios from 'axios';
 import {toast} from "react-hot-toast";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoEyeOffOutline } from "react-icons/io5";
+import Loader from '../components/Loader';
 
 function Signup3(){
 
     const {name,email}=useContext(AppContext);
+
+    const [loader,setloader]=useState(false);
     
     const [pass,setpass]=useState('');
     const [cpass,setcpass]=useState('');
@@ -30,6 +33,7 @@ function Signup3(){
             toast.error("All fields are required")
         }
         else if(pass===cpass){
+            setloader(true);
             try{
                 const url = process.env.REACT_APP_API_URL;
                 const response = await axios({
@@ -58,6 +62,7 @@ function Signup3(){
                 toast.error("Something went wrong ! please follow the steps carefully")
                 console.log("leo" , e.message);
             }
+            setloader(false);
         }
         else{
             toast.error("Password and Confirm password not matching")
@@ -109,6 +114,8 @@ function Signup3(){
         </div>
 
         <p IoIosArrowRoundBack className="fixed top-5 left-5 text-xl cursor-pointer text-gray-400 underline underline-offset-2"onClick={back}>Want to register other account instead ?</p>
+
+        {loader && <div className="fixed top-0 right-0 left-0  flex justify-center items-center h-full bg-black bg-opacity-50 z-50 overflow-x-hidden overflow-y-hidden"><Loader/></div>}
     </div>
     )
 }
