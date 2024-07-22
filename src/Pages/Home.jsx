@@ -11,6 +11,7 @@ function Home(){
     const{cartData,setcartData}=useContext(AppContext);
 
     async function fetchcartitems(){
+        setLoading(true);
         try{
             const url = process.env.REACT_APP_API_URL;
             const response = await fetch(`${url}/getUserItems`, {
@@ -22,6 +23,9 @@ function Home(){
             });
             const res=await response.json();
             console.log("IN HOME fetchcartitems- " , res);
+            if(res.message=="User Not Found") {
+                Navigate('/')
+            }
             setcartData(res.data);
         }
         catch(e){
@@ -42,6 +46,7 @@ function Home(){
             console.log("Error agya ji");
             setItems([]);
         }
+        setLoading(false);
     }
 
     useEffect(()=>{
@@ -66,7 +71,7 @@ function Home(){
                         }
                     </div>
                 ):
-                <p>NO DATA FOUND</p>
+                <Spinner/>
             }
         </div>
         </div>
