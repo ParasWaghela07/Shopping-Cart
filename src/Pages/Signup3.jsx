@@ -64,8 +64,12 @@ function Signup3(){
         }
     }
 
+    function back(){
+        navigate('/');
+    }
+
     return(
-        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-hidden">
+        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-x-hidden overflow-y-hidden">
         <div className="flex items-center justify-center lg:justify-between max-w-[1200px] w-[80%]">
     
             <div className="flex justify-center flex-col gap-y-7 p-2">
@@ -103,6 +107,8 @@ function Signup3(){
 
             <img src="/pass.png" alt="" className="w-[500px] hidden lg:block "/>
         </div>
+
+        <p IoIosArrowRoundBack className="fixed top-5 left-5 text-xl cursor-pointer text-gray-400 underline underline-offset-2"onClick={back}>Want to register other account instead ?</p>
     </div>
     )
 }

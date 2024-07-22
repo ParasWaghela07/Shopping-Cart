@@ -19,6 +19,7 @@ function Cart(){
     
     return(
         <div>
+            <Navbar/>
             <div className="w-[100vw] h-full mt-[12vh] overflow-x-hidden">
             {
                 cartData?.length>0?

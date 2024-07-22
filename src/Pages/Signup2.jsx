@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import {toast} from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 function Signup2(){
     const [userOtp,setuserotp]=useState('');
@@ -26,8 +27,12 @@ function Signup2(){
     function userOtpHandler(e){
         setuserotp(e.target.value);
     }
+    function back(){
+        navigate('/signup1')
+    }
+
     return(
-        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-hidden">
+        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-x-hidden overflow-y-hidden">
 
             <div className="flex items-center justify-center lg:justify-between max-w-[1200px] w-[80%]">
                 <div  className="flex justify-center flex-col gap-y-7 p-2">
@@ -50,6 +55,8 @@ function Signup2(){
 
                 <img src="/otp.png" alt="" className="w-[500px] hidden lg:block "/>
             </div>
+
+            <IoIosArrowRoundBack className="fixed top-5 left-5 text-6xl cursor-pointer"onClick={back}/>
 
         </div>
 

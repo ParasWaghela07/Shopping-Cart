@@ -3,6 +3,7 @@ import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import {toast} from "react-hot-toast";
 import Loader from '../components/Loader';
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 function Signup1(){
 
@@ -61,12 +62,15 @@ function Signup1(){
         setloader(false);
     }
     
+    function back(){
+        navigate('/')
+    }
 
 
 
 
     return(
-        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-hidden">
+        <div className="w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 text-blue-950 overflow-x-hidden overflow-y-hidden">
 
             <div className="flex items-center justify-center lg:justify-between max-w-[1200px] w-[80%]">
                 <div  className="flex justify-center flex-col gap-y-7 p-2">
@@ -98,7 +102,9 @@ function Signup1(){
                 <img src="/signin1.png" alt="" className="w-[600px] hidden lg:block "/>
             </div>
 
-        {loader && <div className="fixed top-0 right-0 left-0  flex justify-center items-center h-full bg-black bg-opacity-50 z-50"><Loader/></div>}
+        {loader && <div className="fixed top-0 right-0 left-0  flex justify-center items-center h-full bg-black bg-opacity-50 z-50 overflow-x-hidden overflow-y-hidden"><Loader/></div>}
+
+        <IoIosArrowRoundBack className="fixed top-5 left-5 text-6xl cursor-pointer"onClick={back}/>
 
         </div>
 
