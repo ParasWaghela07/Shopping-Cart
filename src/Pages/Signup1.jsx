@@ -81,7 +81,7 @@ function Signup1(){
                 type="text" 
                 value={name}
                 onChange={nameHandler}
-                />
+                autofocus/>
                 </div>
 
                 <div>

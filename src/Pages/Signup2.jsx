@@ -55,7 +55,7 @@ function Signup2(){
                 type="text" 
                 value={userOtp}
                 onChange={userOtpHandler}
-                />
+                autofocus />
                 </div>
 
                 <button  className="bg-green-700 w-full text-white font-bold text-xl p-3 rounded-lg hover:bg-green-600 transition duration-200" onClick={verifyOtp}>

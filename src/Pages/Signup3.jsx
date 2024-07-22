@@ -98,7 +98,8 @@ function Signup3(){
                 <input className="bg-gray-200 p-2 rounded-md outline-none text-lg"
                 type= {eye1 ? "text" : "password"}
                 value={pass}
-                onChange={passhandler} />
+                onChange={passhandler} 
+                autofocus />
 
                 {eye1?<IoEyeOutline className="text-2xl cursor-pointer" onClick={()=>seteye1(!eye1)}/> : <IoEyeOffOutline className="text-2xl cursor-pointer" onClick={()=>seteye1(!eye1)}/>}
                 </div>
