@@ -147,7 +147,7 @@ function Card({ item, setLoading ,amount,setamount}) {
 
             if (res.success) {
                 fetchcartitems();
-                const updatedAmount=amount-item.price.toFixed(2);
+                const updatedAmount=(amount-item.price).toFixed(2);
                 setamount(updatedAmount);
                 toast.success("Item removed from cart");
             }
