@@ -19,7 +19,7 @@ exports.auth=async(req,res,next)=>{
             // console.log(payload);
             req.payload=payload;
             console.log("payload :- ",payload);
-            const userExist=await userSchema.findbyId(payload.id);
+            const userExist=await userSchema.findById(payload.id);
 
             if(!userExist){
                 return res.status(404).json({
