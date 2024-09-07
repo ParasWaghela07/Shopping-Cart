@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
+import { products } from "../data";
 
 function Home(){
     const [items,setItems]=useState([]);
@@ -39,10 +40,10 @@ function Home(){
     async function fetchitems(){
         setLoading(true);
         try{
-            const respose=await fetch('https://fakestoreapi.com/products');
-            const res=await respose.json();
+            // const respose=await fetch('https://fakestoreapi.com/products');  API EXPIRED !!!
+            // const res=await respose.json();
             // console.log("ITEMS IN HOME :- " , res);
-            setItems(res);
+            setItems(products);
         }
         catch(e){
             console.log(e);

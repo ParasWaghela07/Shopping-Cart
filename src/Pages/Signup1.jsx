@@ -80,8 +80,7 @@ function Signup1(){
                 <input className="bg-gray-200 p-2 rounded-md outline-none text-lg"
                 type="text" 
                 value={name}
-                onChange={nameHandler}
-                autofocus/>
+                onChange={nameHandler}/>
                 </div>
 
                 <div>
